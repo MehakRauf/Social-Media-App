@@ -9,7 +9,7 @@ import RightBar from './components/RightBar/RightBar';
 import LeftBar from './components/LeftBar/LeftBar';
 
 const App = () => {
-  const currentUser = true; // Simulating authentication state
+  const currentUser = true; 
 
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {

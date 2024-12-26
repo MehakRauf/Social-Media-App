@@ -1,7 +1,5 @@
 import React from 'react';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -19,7 +17,6 @@ const Navbar = () => {
           <span>VIBELY</span>
         </Link>
         <HomeOutlinedIcon />
-        <DarkModeOutlinedIcon />
         <GridViewOutlinedIcon />
         <div className="search">
           <SearchOutlinedIcon/>
