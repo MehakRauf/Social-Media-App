@@ -1,0 +1,88 @@
+.login {
+    height: 100vh;
+    background-color: rgb(193, 190, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        display: flex;
+        width: 50%;
+        background-color: white;
+        border-radius: 12px;
+        min-height: 450px;
+        overflow: hidden;
+
+        .left {
+            flex: 1;
+            background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBxc6LifmVV2y_hUNP6RvotH2sd4ljWoHyuQ&s") center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            gap: 30px;
+            color: white;
+
+            h1 {
+                font-size: 80px;
+                line-height: 1;
+            }
+
+            p {}
+
+            span {
+                font-size: 14px;
+            }
+
+            button {
+                width: 50%;
+                padding: 10px;
+                border: none;
+                outline: none;
+                background-color: white;
+                color: black;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+
+        .right {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+
+            h1 {
+                color: #555;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                input {
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid gray;
+                    padding: 8px 0px;
+                }
+
+                button {
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    outline: none;
+                    background-color: #938eef;
+                    color: black;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
