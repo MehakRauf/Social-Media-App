@@ -33,10 +33,9 @@ const Stories = () => {
                 <button>+</button>
             </div>
             {stories.map(story => (
-                <div key ={story.id} className="story">
+                <div key={story.id} className="story">
                     <img src={story.img} alt="" />
                     <span>{story.name}</span>
-                    {console.log(story.name)}
                 </div>
             ))}
         </div>

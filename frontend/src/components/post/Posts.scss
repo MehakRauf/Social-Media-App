@@ -1,17 +1,18 @@
 .post {
+    margin: 0px 50px;
     .container {
-        padding: 20px;
-
         .user {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .userInfo {
+                margin-top: -50px;
                 display: flex;
                 gap: 20px;
 
                 img {
+                    
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
@@ -19,6 +20,7 @@
                 }
 
                 .details {
+                    
                     display: flex;
                     flex-direction: column;
 
@@ -39,7 +41,7 @@
         }
 
         .content {
-            margin: 20px 0px;
+            margin-top: -70px;
 
             img {
                 width: 100%;
