@@ -4,28 +4,35 @@
     top: 70px;
     height: calc(100vh - 70px);
     overflow: scroll;
-    &::-webkit-scrollbar{
+
+    &::-webkit-scrollbar {
         display: none;
     }
+
     .container {
         padding: 20px;
-        hr{
+
+        hr {
             margin: 20px 0px;
             border: none;
             height: 0.5px;
             background: lightgray;
         }
-        span{
+
+        span {
             font-size: 12px;
         }
+
         .menu {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
             .user {
                 display: flex;
                 align-items: center;
                 gap: 10px;
+
                 img {
                     width: 20px;
                     height: 20px;
@@ -42,6 +49,7 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+
                 img {
                     width: 20px;
                     height: 20px;
