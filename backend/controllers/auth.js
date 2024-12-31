@@ -13,7 +13,7 @@ const register = (req, res) => {
         }
 
         if (data.length) {
-            return res.status(400).json("User already exists!"); // Better to return 400 for user already exists
+            return res.status(400).json("User already exists!"); 
         }
 
         // Hash the password
@@ -40,6 +40,7 @@ const register = (req, res) => {
 };
 
 const login = (req, res) => {
+    console.log(req.body);
     const q = "select * from users where username = ? ";
     connect.query(q, [req.body.username], (err, data) => {
         if (err) return res.status(500).json(err);

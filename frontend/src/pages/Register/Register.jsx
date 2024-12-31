@@ -26,6 +26,7 @@ const Register = () => {
       setErr(err.response.data);
     }
   }
+  console.log(err);
 
   console.log(inputs);
   return (

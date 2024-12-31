@@ -10,6 +10,10 @@ import authRoutes from './routes/auths.js'
 // import likeRoutes from "./routes/likes.js";
 // import relationshipRoutes from "./routes/relationships.js";
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Credentials", true);
+    next();
+})
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(cookieParser());
