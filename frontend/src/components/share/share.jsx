@@ -30,7 +30,7 @@ const Share = () => {
     const mutation = useMutation({
         mutationFn: (newPost) => makeRequest.post("/posts", newPost),
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: "posts" });
+            queryClient.refetchQueries(["posts"]);
         },
     });
 
