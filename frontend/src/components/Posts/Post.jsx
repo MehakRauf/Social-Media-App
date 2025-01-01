@@ -1,36 +1,44 @@
-import React from 'react';
-import './Post.scss';
-import Posts from '../post/Posts';
+import React from "react";
+import { makeRequest } from "../../axios";
+import { useQuery } from "@tanstack/react-query";
+import "./Post.scss";
+import Posts from "../post/Posts";
 
-const Post = () => {
-    const posts = [
-        {
-            id: 1,
-            name: "Mehak Fatima",
-            userId: 1,
-            profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-yi8lUjKNVqmWkbY2plqdttxFpzC2Efcq0g&s",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, error?",
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBxc6LifmVV2y_hUNP6RvotH2sd4ljWoHyuQ&s"
+const Post = ({ userId }) => {
+    // const { isLoading, error, data = [] } = useQuery({
+    //     queryKey: ["posts", userId],
+    //     queryFn: async () => {
+    //         if (!userId) throw new Error("User ID is undefined");
+    //         const res = await makeRequest.get(`/posts?userId=${userId}`);
+    //         return res.data;
+    //     },
+    //     enabled: !!userId, // Only fetch if userId is valid
+    // });
+    // console.log(data);
+    const { isLoading, error, data } = useQuery({
+        queryKey: ["posts"],
+        queryFn: async () => {
+            const res = await makeRequest.get("/posts");
+            return res.data;
         },
-        {
-            id: 2,
-            name: "Mehak Fatima",
-            userId: 2,
-            profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-yi8lUjKNVqmWkbY2plqdttxFpzC2Efcq0g&s",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, error?",
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBxc6LifmVV2y_hUNP6RvotH2sd4ljWoHyuQ&s"
-        }
+    });
+    
+    console.log(data);
+    
 
-    ]
     return (
         <div className="posts">
-            <div>
-                {posts.map(post => (
-                    <Posts post={post} key={post.id} />
-                ))}
-            </div>
+            {error ? (
+                <p>Error: {error.message}</p>
+            ) : isLoading ? (
+                <p>Loading...</p>
+            ) : data.length > 0 ? (
+                data.map((post) => <Posts post={post} key={post.id} />)
+            ) : (
+                <p>No posts available.</p>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default Post
+export default Post;

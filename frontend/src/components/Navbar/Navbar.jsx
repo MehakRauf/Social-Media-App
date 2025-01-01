@@ -6,10 +6,13 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../context/authContext";
+import { useContext } from "react";
 
 import './Navbar.scss';
 
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className='navbar'>
       <div className="left">
@@ -19,18 +22,21 @@ const Navbar = () => {
         <HomeOutlinedIcon />
         <GridViewOutlinedIcon />
         <div className="search">
-          <SearchOutlinedIcon/>
+          <SearchOutlinedIcon />
           <input type="text" placeholder='Search here' />
         </div>
       </div>
       <div className="right">
-    <PersonOutlinedIcon/>
-    <EmailOutlinedIcon/>
-    <NotificationsOutlinedIcon/>
-    <div className="user">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-yi8lUjKNVqmWkbY2plqdttxFpzC2Efcq0g&s" alt="" />
-      <span>Mehak Fatima</span>
-    </div>
+        <PersonOutlinedIcon />
+        <EmailOutlinedIcon />
+        <NotificationsOutlinedIcon />
+        <div className="user">
+          <img
+            src={"/upload/" + currentUser.profilePic}
+            alt=""
+          />
+          <span>{currentUser.name}</span>
+        </div>
       </div>
     </div>
   )
