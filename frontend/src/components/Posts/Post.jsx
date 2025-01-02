@@ -23,9 +23,6 @@ const Post = ({ userId }) => {
         },
     });
     
-    console.log(data);
-    
-
     return (
         <div className="posts">
             {error ? (

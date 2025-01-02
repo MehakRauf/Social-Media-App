@@ -11,7 +11,7 @@ import Comments from '../Comments/Comments';
 
 const Posts = ({ post }) => {
     const [openComments, setOpenComments] = useState(false);
-    const liked = false;
+    const liked = true;
     return (
         <div className='post'>
             <div className="container">
@@ -33,19 +33,19 @@ const Posts = ({ post }) => {
                 </div>
                 <div className="info">
                     <div className="item">
-                        {liked ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
-                        12 Likes
+                        {liked ? <FavoriteOutlinedIcon style={{ color: "red" }} /> : <FavoriteBorderOutlinedIcon />}
+                        Likes
                     </div>
                     <div className="item" onClick={() => setOpenComments(!openComments)}>
                         <TextsmsOutlinedIcon />
-                        12 Comments
+                        Comments
                     </div>
                     <div className="item">
                         <ShareOutlinedIcon />
                         Share
                     </div>
                 </div>
-                {openComments && <Comments />}
+                {openComments && <Comments postId={post.id} />}
             </div>
         </div>
     )
